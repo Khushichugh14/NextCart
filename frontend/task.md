@@ -1,0 +1,33 @@
+- [ ] Set up Spring Boot backend: Maven install, create pom, add dependencies for Spring Web, Security, JPA, H2, JWT, Razorpay SDK
+- [ ] Implement auth module (signup, login, JWT generation)
+- [ ] Create Product entity and seed data (50 items) with trending/featured flags
+- [ ] Build frontend components:
+  - [ ] components/Navbar.tsx
+  - [ ] components/HeroBanner.tsx
+  - [ ] components/CategorySection.tsx
+  - [ ] components/Filters.tsx
+  - [ ] components/SortBy.tsx
+  - [ ] components/Pagination.tsx
+  - [ ] components/ProductGrid.tsx
+  - [ ] components/TrendingProducts.tsx
+  - [ ] components/FeaturedProducts.tsx
+  - [ ] components/Footer.tsx
+  - [ ] components/ReviewList.tsx
+  - [ ] components/ReviewForm.tsx
+  - [ ] components/CartDrawer.tsx
+  - [ ] components/WishlistDrawer.tsx
+  - [ ] components/CheckoutForm.tsx
+  - [ ] components/OrderTracking.tsx
+  - [ ] components/AdminDashboard.tsx
+  - [ ] components/AuthGuard.tsx
+- [ ] Update layout.tsx to include Navbar and Footer
+- [ ] Update home page (app/page.tsx) to include HeroBanner, CategorySection, TrendingProducts, FeaturedProducts
+- [ ] Update products page to use Filters, SortBy, ProductGrid, Pagination
+- [ ] Add dynamic product detail page (app/products/[id]/page.tsx) with large images, description, reviews, Add to Cart, Wishlist
+- [ ] Implement cart page (app/cart/page.tsx) and wishlist page (app/wishlist/page.tsx)
+- [ ] Implement checkout page with Razorpay integration
+- [ ] Implement order tracking page
+- [ ] Implement admin dashboard pages and protect with AuthGuard
+- [ ] Add JWT handling in frontend (api utils, context)
+- [ ] Add dark mode toggle and ensure all components support dark mode
+- [ ] Testing: unit tests for backend, Playwright e2e for frontend

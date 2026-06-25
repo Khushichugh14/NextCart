@@ -1,0 +1,29 @@
+/* globals.css – Tailwind base, components and utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom global styles */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+/* Light/Dark theme variables – match Tailwind config */
+:root {
+  --color-primary: hsl(220, 90%, 56%);
+  --color-secondary: hsl(340, 80%, 58%);
+  --color-accent: hsl(45, 95%, 55%);
+  --color-background: hsl(210, 15%, 98%);
+  --color-foreground: hsl(210, 15%, 10%);
+}
+
+.dark {
+  --color-background: hsl(210, 15%, 10%);
+  --color-foreground: hsl(210, 15%, 98%);
+}
