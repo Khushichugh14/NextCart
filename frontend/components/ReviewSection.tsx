@@ -29,7 +29,7 @@ export default function ReviewSection({ productId }: { productId: number }) {
 
   const fetchReviews = async () => {
     try {
-      const res = await fetch(`http://localhost:8080/api/reviews/product/${productId}`);
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080/api'}/reviews/product/${productId}`);
       if (res.ok) {
         const data = await res.json();
         setReviews(data);
@@ -52,7 +52,7 @@ export default function ReviewSection({ productId }: { productId: number }) {
     setError('');
 
     try {
-      const res = await fetch('http://localhost:8080/api/reviews', {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080/api'}/reviews`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

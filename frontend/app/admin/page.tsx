@@ -86,7 +86,7 @@ export default function AdminDashboard() {
   const [productCatFilter, setProductCatFilter] = useState('All');
 
   const fetchProducts = () => {
-    fetch('http://localhost:8080/api/products')
+    fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080/api'}/products`)
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
@@ -112,7 +112,7 @@ export default function AdminDashboard() {
 
   const fetchOrders = () => {
     if (!token) return;
-    fetch('http://localhost:8080/api/admin/orders', {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080/api'}/admin/orders`, {
       headers: { 'Authorization': `Bearer ${token}` }
     })
       .then(res => {
@@ -138,7 +138,7 @@ export default function AdminDashboard() {
 
   const fetchUsers = () => {
     if (!token) return;
-    fetch('http://localhost:8080/api/admin/users', {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080/api'}/admin/users`, {
       headers: { 'Authorization': `Bearer ${token}` }
     })
       .then(res => {
@@ -181,7 +181,7 @@ export default function AdminDashboard() {
       description: newProductDesc,
     };
 
-    fetch('http://localhost:8080/api/products', {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080/api'}/products`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
       body: JSON.stringify(addedProduct),
@@ -208,7 +208,7 @@ export default function AdminDashboard() {
     e.preventDefault();
     if (!editingProduct) return;
     
-    fetch(`http://localhost:8080/api/products/${editingProduct.id}`, {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080/api'}/products/${editingProduct.id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
       body: JSON.stringify(editingProduct),
@@ -234,7 +234,7 @@ export default function AdminDashboard() {
   // Delete Product
   const handleDeleteProduct = (id: number) => {
     if (confirm('Are you sure you want to delete this product?')) {
-      fetch(`http://localhost:8080/api/products/${id}`, {
+      fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080/api'}/products/${id}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       })
@@ -268,7 +268,7 @@ export default function AdminDashboard() {
     if (!userToToggle) return;
     const newRole = userToToggle.role === 'ROLE_ADMIN' ? 'ROLE_USER' : 'ROLE_ADMIN';
     
-    fetch(`http://localhost:8080/api/admin/users/${userId}/role`, {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080/api'}/admin/users/${userId}/role`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
       body: JSON.stringify({ role: newRole })
