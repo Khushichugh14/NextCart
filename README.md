@@ -1,5 +1,8 @@
 # NextCart E-Commerce
 
+**Live Demo (Frontend):** [https://nextcart-r7qo.onrender.com](https://nextcart-r7qo.onrender.com)
+**Live API (Backend):** [https://nextcart-1-a93m.onrender.com/api](https://nextcart-1-a93m.onrender.com/api)
+
 NextCart is an industry-level, full-stack e-commerce platform built with a modern, responsive frontend and a secure, robust backend. It includes a comprehensive shopping experience featuring beautiful product displays, a shopping cart, a secure checkout flow using Razorpay, and a fully functional Admin Dashboard.
 
 ## Features
